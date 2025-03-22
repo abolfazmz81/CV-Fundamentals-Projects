@@ -124,6 +124,59 @@ This project provides a program that implements the histogram equalization metho
 
 **Directory:** [`./Low contrast`](./Low%20contrast)
 
+### Project 8: Periodic noise remover
+
+**Description:**  
+This project provides a program that purifies and cleans an image contaminated with periodic noise in the Fourier spectrum.
+
+**Features:**
+- Fourier Transform Analysis:
+  - Loads a grayscale image and computes its 2D Fourier Transform.
+  - Visualizes the magnitude spectrum and phase spectrum after applying a log transformation for better visualization.
+  - Displays the original image alongside the magnitude and phase spectra for analysis.
+- Periodic Noise Removal:
+  - Loads the image, computes its Fourier Transform, and shifts the zero frequency component to the center.
+  - Visualizes the Fourier spectrum of the image.
+  - Creates a mask to filter out specific periodic noise points in the frequency domain.
+  - Applies the mask to the Fourier spectrum, reconstructs the image by inverse Fourier Transform, and visualizes the cleaned image.
+
+**Directory:** [`./Periodic noise remover`](./Periodic%20noise%20remover)
+
+### Project 9: Phase swapper
+
+**Description:**  
+This project provides a program that swaps the phase of two different images by first extracting their phase components and exchanging them accordingly.
+
+**Features:**
+- Fourier Transform Analysis:
+  - Loads two grayscale images and computes their 2D Fourier Transforms.
+  - Extracts the magnitude and phase spectra from each image.
+  - Visualizes the original images, magnitude spectra, and phase spectra for comparison.
+- Phase Swapping:
+  - Swaps the phase components between two images.
+  - Reconstructs the images using the swapped phase components while keeping the magnitude components from the original images.
+  - Displays the reconstructed images to visualize the effects of the phase swap.
+
+**Directory:** [`./Phase swapper`](./Phase%20swapper)
+
+### Project 10: camera feature extractor
+
+**Description:**  
+This project provides a program that extracts camera features based on the mapping of 3D and 2D points provided in the respective MATLAB matrices.
+
+**Features:**
+- Loads 2D and 3D feature points from MATLAB .mat files, which contain image points and scene points, respectively.
+- Normalizes both 2D and 3D feature points to have zero mean and unit standard deviation.
+- Constructs a matrix based on the projection equation to relate the 3D points to the 2D points.
+- Uses Singular Value Decomposition (SVD) to solve for the camera parameters, which gives the camera matrix.
+- Extracts the intrinsic matrix (K) and rotation matrix (R) using QR decomposition on the camera matrix.
+- Calculates the focal lengths (fx and fy) based on the intrinsic matrix and the normalization factors.
+- Maps the 3D points using the camera matrix and projects them into 2D image points.
+- Computes the pixel-wise Euclidean distance between the original 2D points and the mapped 2D points to evaluate the camera model’s accuracy.
+- Calculates and outputs the Mean Squared Error (MSE) and Root Mean Squared Error (RMSE) for the projection accuracy.
+
+**Directory:** [`./camera feature extractor`](./camera%20feature%20extractor)
+
 ## Installation and Usage
 
 To run any of these projects locally:
